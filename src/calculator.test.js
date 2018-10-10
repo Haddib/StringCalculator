@@ -11,3 +11,7 @@ it("should return number when only that number is inserted into add()", () => {
 it("should return the sum of the 2 numbers entered into add()", () => {
   expect(add("5,4")).toBe(9);
 });
+
+it("should return the sum of all the numbers entered into add()", () => {
+  expect(add("5,4,3,2")).toBe(14);
+});
