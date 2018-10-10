@@ -2,12 +2,9 @@ function add (numbers){
   if(numbers == ""){
     return 0;
   }
-  if(numbers.includes("," || "\\n")){
-    var numberArray = createArray(numbers);
+  var numberArray = createArray(numbers);
+  if(numberArray.length > 0){
     return sum(numberArray);
-  }
-  else{
-    return parseInt(numbers);
   }
 }
 
