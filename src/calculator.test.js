@@ -26,3 +26,14 @@ it("should throw an exception if a negative number is entered", () => {
   }
   expect(testAdd).toThrow("Negatives not allowed: -1");
 });
+
+it("should throw an exception if many negative numbers are entered", () => {
+  function testAdd(){
+    add("2,-4,3,-5");
+  }
+  expect(testAdd).toThrow("Negatives not allowed: -4,-5");
+});
+
+it("should ignore numbers larger than 1000", () => {
+  expect(add("5,1001,6")).toBe(11);
+});
