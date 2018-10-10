@@ -19,3 +19,10 @@ it("should return the sum of all the numbers entered into add()", () => {
 it("should be able to handle both commas and new lines between numbers", () => {
   expect(add("5\n4,3\n10")).toBe(22);
 });
+
+it("should throw an exception if a negative number is entered", () => {
+  function testAdd(){
+    add("-1,2");
+  }
+  expect(testAdd).toThrow("Negatives not allowed: -1");
+});

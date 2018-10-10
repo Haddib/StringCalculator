@@ -11,6 +11,9 @@ function add (numbers){
 function sum(numberArray){
   var total = 0;
   for(var i = 0 ; i < numberArray.length ; i++){
+    if(parseInt(numberArray[i]) < 0){
+      throw "Negatives not allowed: " + numberArray[i];
+    }
     total += parseInt(numberArray[i]);
   }
   return total;
