@@ -39,6 +39,10 @@ function sum(numberArray){
 
 function createArray(numbers){
   var separators = [',', '\\n'];
+  if(numbers.substring(2, 0) == "//"){
+    separators[2] = numbers.charAt(2);
+    numbers = numbers.substring(numbers.indexOf("\n") + 1);
+  }
   var numberArray = numbers.split(new RegExp(separators.join('|'), 'g'));
   return numberArray;
 }

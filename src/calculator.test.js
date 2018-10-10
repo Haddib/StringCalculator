@@ -37,3 +37,7 @@ it("should throw an exception if many negative numbers are entered", () => {
 it("should ignore numbers larger than 1000", () => {
   expect(add("5,1001,6")).toBe(11);
 });
+
+it("should be able to change the deilimiter", () => {
+  expect(add("//;\n1;2")).toBe(3);
+});
