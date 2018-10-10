@@ -2,8 +2,8 @@ function add (numbers){
   if(numbers == ""){
     return 0;
   }
-  if(numbers.includes(",")){
-    var numberArray = numbers.split(",")
+  if(numbers.includes("," || "\\n")){
+    var numberArray = createArray(numbers);
     return sum(numberArray);
   }
   else{
@@ -17,6 +17,12 @@ function sum(numberArray){
     total += parseInt(numberArray[i]);
   }
   return total;
+}
+
+function createArray(numbers){
+  var separators = [',', '\\n'];
+  var numberArray = numbers.split(new RegExp(separators.join('|'), 'g'));
+  return numberArray;
 }
 
 module.exports = add;
